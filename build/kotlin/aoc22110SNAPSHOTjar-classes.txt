@@ -1,1 +1,0 @@
-C:\Users\Szymon\Documents\Kotlin\aoc22-1\build\classes\kotlin\main\Elf.class;C:\Users\Szymon\Documents\Kotlin\aoc22-1\build\classes\kotlin\main\MainKt$decide$$inlined$sortByDescending$1.class;C:\Users\Szymon\Documents\Kotlin\aoc22-1\build\classes\kotlin\main\MainKt$readLines$1.class;C:\Users\Szymon\Documents\Kotlin\aoc22-1\build\classes\kotlin\main\MainKt.class
