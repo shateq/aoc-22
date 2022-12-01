@@ -1,14 +1,29 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm") version "1.7.21"
     application
 }
 
-group = "shateq.kotlin"
-version = "1.0-SNAPSHOT"
+allprojects {
+    this.plugins.apply("org.jetbrains.kotlin.jvm")
+    this.plugins.apply("org.gradle.application")
+    group = "shateq.kotlin"
+    version = "1.0-SNAPSHOT"
+    description = "My approach to adventofcode in 2022"
+    repositories.mavenCentral()
 
-repositories.mavenCentral()
+    tasks {
+        compileKotlin {
+            kotlinOptions.jvmTarget = "1.8"
+        }
+        processResources {
+            filteringCharset = "UTF-8"
+        }
+    }
+
+    application {
+        mainClass.set("MainKt")
+    }
+}
 
 dependencies {
     testImplementation(kotlin("test"))
@@ -16,12 +31,4 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-application {
-    mainClass.set("MainKt")
 }
