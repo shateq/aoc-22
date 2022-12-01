@@ -27,12 +27,20 @@ fun decide(caloriesList: List<String>) {
     elves.sortByDescending { it.calories }
     val mostElf = elves[0]
 
+    val mostThree = setOf(elves[0], elves[1], elves[2])
+    var backups: Long = 0;
+    mostThree.forEach {
+        backups += it.calories
+    }
+
     println("Out of ${elves.size + 1} elves...")
     println("You guys better ask elf ${immutableElves[immutableElves.indexOf(mostElf)]} " +
             "(number ${immutableElves.indexOf(mostElf) + 1}), " +
             "who has ${mostElf.calories} calories!"
     )
-    
+
+    println("Our 3 backup elves have $backups calories in total.")
+
     if (!(immutableElves != elves && (immutableElves.size == elves.size))) throw Exception("Not a success")
 }
 
