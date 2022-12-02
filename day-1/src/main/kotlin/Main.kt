@@ -1,5 +1,5 @@
-// Elves don't lie every input on the list is honest!
 // https://adventofcode.com/2022/day/1/input
+// Elves don't lie every input on the list is honest!
 val elves: MutableList<Elf> = mutableListOf()
 
 fun main() {
