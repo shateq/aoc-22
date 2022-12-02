@@ -33,13 +33,13 @@ fun decide(caloriesList: List<String>) {
         backups += it.calories
     }
 
-    println("Out of ${elves.size + 1} elves...")
+    println("Out of ${elves.size + 1} getElves...")
     println("You guys better ask elf ${immutableElves[immutableElves.indexOf(mostElf)]} " +
             "(number ${immutableElves.indexOf(mostElf) + 1}), " +
             "who has ${mostElf.calories} calories!"
     )
 
-    println("Our 3 backup elves have $backups calories in total.")
+    println("Our 3 backup getElves have $backups calories in total.")
 
     if (!(immutableElves != elves && (immutableElves.size == elves.size))) throw Exception("Not a success")
 }

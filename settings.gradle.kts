@@ -1,5 +1,4 @@
-setOf("day-1").forEach {
-    include(it)
+setOf("1", "2").forEach {
+    include("day-$it")
 }
-
 rootProject.name = "aoc2022"

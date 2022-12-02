@@ -9,6 +9,7 @@ allprojects {
     group = "shateq.kotlin"
     version = "1.0-SNAPSHOT"
     description = "My approach to adventofcode in 2022"
+
     repositories.mavenCentral()
 
     tasks {
