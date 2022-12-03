@@ -3,7 +3,7 @@
 val elves: MutableList<Elf> = mutableListOf()
 
 fun main() {
-    val lines: List<String> = readLines("input.txt")
+    val lines: List<String> = readLines("day1.txt")
     try {
         decide(lines)
     } catch (e: Exception) {
@@ -42,8 +42,4 @@ fun decide(caloriesList: List<String>) {
     println("Our 3 backup getElves have $backups calories in total.")
 
     if (!(immutableElves != elves && (immutableElves.size == elves.size))) throw Exception("Not a success")
-}
-
-fun readLines(fileName: String): List<String> {
-    return object {}.javaClass.getResourceAsStream(fileName)?.reader()?.readLines() ?: listOf()
 }

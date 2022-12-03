@@ -1,36 +1,36 @@
 // https://adventofcode.com/2022/day/2
 
 val map = mapOf(
-    Pair("A", RPS.Rock),
-    Pair("B", RPS.Paper),
-    Pair("C", RPS.Scissors),
-    Pair("X", RPS.Rock),
-    Pair("Y", RPS.Paper),
-    Pair("Z", RPS.Scissors),
+    "A" to RPS.Rock,
+    "B" to RPS.Paper,
+    "C" to RPS.Scissors,
+    "X" to RPS.Rock,
+    "Y" to RPS.Paper,
+    "Z" to RPS.Scissors,
 )
 
 val needTo = mapOf(
-    Pair("X", Outcome.LOSE),
-    Pair("Y", Outcome.DRAW),
-    Pair("Z", Outcome.WIN)
+    "X" to Outcome.LOSE,
+    "Y" to Outcome.DRAW,
+    "Z" to Outcome.WIN
 )
 // TODO naming ftw
 val whatWins = mapOf(
-    Pair(RPS.Paper, RPS.Rock),
-    Pair(RPS.Rock, RPS.Scissors),
-    Pair(RPS.Scissors, RPS.Paper)
+    RPS.Paper to RPS.Rock,
+    RPS.Rock to RPS.Scissors,
+    RPS.Scissors to RPS.Paper
 )
 
 val whatLoses = mapOf(
-    Pair(RPS.Paper, RPS.Scissors),
-    Pair(RPS.Rock, RPS.Paper),
-    Pair(RPS.Scissors, RPS.Rock)
+    RPS.Paper to RPS.Scissors,
+    RPS.Rock to RPS.Paper,
+    RPS.Scissors to RPS.Rock
 )
 
 var total = 0
 
 fun main() {
-    val lines = readLines("input.txt")
+    val lines = readLines("day2.txt")
     one(lines)
     total = 0
     two(lines)
@@ -80,8 +80,4 @@ fun RPS.verdict(other: RPS): Outcome {
     if (whatWins[this] == other) return Outcome.WIN
     if (whatWins[this] != other) return Outcome.LOSE
     return Outcome.DRAW
-}
-
-fun readLines(fileName: String): List<String> {
-    return object {}.javaClass.getResourceAsStream(fileName)?.reader()?.readLines() ?: listOf()
 }

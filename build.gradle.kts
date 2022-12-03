@@ -24,6 +24,12 @@ allprojects {
     application {
         mainClass.set("MainKt")
     }
+
+    if (this.name != "common") {
+        dependencies {
+            implementation(project(":common"))
+        }
+    }
 }
 
 dependencies {
